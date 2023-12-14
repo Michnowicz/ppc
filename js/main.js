@@ -1,9 +1,9 @@
 
 function rpc() {
-    let choice = ["rock", "paper", "cisors"]
+    let choice = ["rock", "paper", "scissors"]
     let playerFinalScore = 0
     let pcFinalScore = 0
-    let run = prompt("do you want to play? (y?n)")
+    let run = prompt("do you want to play? (y?n)").toLowerCase()
 
     
 
@@ -21,44 +21,41 @@ function rpc() {
             
                 let pc_choice = (choice[Math.floor(Math.random()*choice.length)])
                 console.log(pc_choice)
-                let player_choice = prompt("Round " + round + ". Choose your next move (rock, paper, cisors)")
+                let player_choice = prompt("Round " + round + ". Choose your next move (rock, paper, scissors)").toLowerCase()
             
                 switch (player_choice) {
                     case "rock":
                         if (pc_choice == "rock") {
-                            alert("the pc chose rock,it's a draw")
+                            alert("the pc chose rock,it's a draw. \n\nplayer score: " + playerPoints + "\npc score: " + pcPoints)
                         } else if (pc_choice == "paper") {
-                            alert("the pc chose paper, you've lost this round.")
+                            alert("the pc chose paper, you've lost this round. \n\nplayer score: " + playerPoints + "\npc score: " + pcPoints)
                             pcPoints++
                         } else {
-                            alert("the pc chose cisors, you've won this round.")
+                            alert("the pc chose scissors, you've won this round. \n\nplayer score: " + playerPoints + "\npc score: " + pcPoints)
                             playerPoints++
                         }
-                        alert("player score: " + playerPoints + " | pc score: " + pcPoints)
                         break;
                     case "paper":
                         if (pc_choice == "rock") {
-                            alert("the pc chose rock,you've won this round.")
+                            alert("the pc chose rock,you've won this round. \n\nplayer score: " + playerPoints + "\npc score: " + pcPoints)
                             playerPoints++
                         } else if (pc_choice == "paper") {
-                            alert("the pc chose paper, it's a draw.")
+                            alert("the pc chose paper, it's a draw. \n\nplayer score: " + playerPoints + "\npc score: " + pcPoints)
                         } else {
-                            alert("the pc chose cisors, you've lost this round.")
+                            alert("the pc chose scissors, you've lost this round. \n\nplayer score: " + playerPoints + "\npc score: " + pcPoints)
                             pcPoints++
                         }
-                        alert("player score: " + playerPoints + " | pc score: " + pcPoints)
                         break;
-                    case "cisors":
+                    case "scissors":
                         if (pc_choice == "rock") {
-                            alert("the pc chose rock,you've lost this round.")
+                            alert("the pc chose rock,you've lost this round. \n\nplayer score: " + playerPoints + "\npc score: " + pcPoints)
                             pcPoints++
                         } else if (pc_choice == "paper") {
-                            alert("the pc chose paper, you've won this round.")
+                            alert("the pc chose paper, you've won this round. \n\nplayer score: " + playerPoints + "\npc score: " + pcPoints)
                             playerPoints++
                         } else {
-                            alert("the pc chose cisors, it's a draw.")
+                            alert("the pc chose scissors, it's a draw. \n\nplayer score: " + playerPoints + "\npc score: " + pcPoints)
                         }
-                        alert("player score: " + playerPoints + " | pc score: " + pcPoints)
                         break;
                     default:
                         alert("I don't understand that, try again.")
@@ -79,20 +76,20 @@ function rpc() {
                 alert("It's a draw. " + playerPoints + " to " + pcPoints)
             }
     
-            run = prompt("another round? (y?n)")
+            run = prompt("another round? (y?n)").toLowerCase()
             while (run != "n" && run != "y") {
                 alert("wrong command, try again")
-                run = prompt("do you want to play? (y?n)")
+                run = prompt("do you want to play? (y?n)").toLowerCase()
             }
         }
         if (run != "y" && run != "n") {
             alert("wrong command, try again")
-            run = prompt("do you want to play? (y?n)")
+            run = prompt("do you want to play? (y?n)").toLowerCase()
         }
     }
 
-    if (playerFinalScore > 0 || pcFinalScore >0) {
-        alert("final score: \n Player: " + playerFinalScore + " \n pc: " + pcFinalScore)
+    if (playerFinalScore > 0 || pcFinalScore > 0) {
+        alert("final score: \n\nPlayer: " + playerFinalScore + " \npc: " + pcFinalScore)
     }
 
     alert("Have a nice day.")
