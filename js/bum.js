@@ -21,3 +21,4 @@ function bum(difficulty) {
     return bum_position
     
 }
+export {bum}
